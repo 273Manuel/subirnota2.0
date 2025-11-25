@@ -1,0 +1,241 @@
+
+:root {
+    --azul: #1B75D1;
+    --verde: #61C7A8;
+    --gris: #2d2d2d;
+    --gris-claro: #575757;
+    --fondo: #F2F4F7;
+    --card: #ffffff;
+    --borde: #e3e7ee;
+}
+
+body {
+    margin: 0;
+    background: var(--fondo);
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    color: var(--gris);
+    letter-spacing: 0.3px;
+}
+
+
+
+header {
+    background: var(--card);
+    padding: 14px 0;
+    box-shadow: 0 3px 20px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+nav {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.4rem;
+    background: linear-gradient(90deg, var(--azul), var(--verde));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--gris);
+    font-weight: 600;
+    padding-bottom: 4px;
+    transition: 0.25s;
+}
+
+nav a:hover {
+    color: var(--azul);
+    border-bottom: 2px solid var(--verde);
+}
+
+.active {
+    border-bottom: 2px solid var(--verde);
+}
+
+
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    padding: 60px 0;
+}
+
+.hero h2 {
+    font-size: 2.8rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.hero p {
+    margin-top: 12px;
+    font-size: 1.15rem;
+    color: var(--gris-claro);
+}
+
+.hero-img {
+    position: relative;
+}
+
+.hero-img img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+}
+
+.hero-img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 15px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.25));
+}
+
+
+.gallery {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 1px solid var(--borde);
+    transition: 0.30s;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+
+.gallery img:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.10);
+    filter: brightness(1.08);
+}
+
+
+h2.center {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+
+.contact {
+    max-width: 600px;
+    margin: auto;
+}
+
+form {
+    background: var(--card);
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.10);
+    border: 1px solid var(--borde);
+}
+
+label {
+    font-weight: 600;
+    margin-top: 15px;
+    display: block;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--borde);
+    margin-top: 6px;
+    background: #fafafa;
+    font-size: 1rem;
+    transition: 0.25s;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--azul);
+    box-shadow: 0 0 6px rgba(27,117,209,0.25);
+}
+
+textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+button {
+    margin-top: 20px;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    background: linear-gradient(90deg, var(--azul), var(--verde));
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.25s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+#result {
+    margin-top: 12px;
+    font-weight: 600;
+}
+
+
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: var(--azul);
+    color: white;
+    margin-top: 60px;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+
+
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-img img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 500px) {
+    nav ul {
+        gap: 15px;
+    }
+}
